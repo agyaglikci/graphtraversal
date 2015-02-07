@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		87C81E801A807AA400D88950 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87C81E7F1A807AA400D88950 /* main.cpp */; };
+		87C81E881A807BA300D88950 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87C81E861A807BA300D88950 /* Node.cpp */; };
+		87C81E8B1A8127AB00D88950 /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87C81E891A8127AB00D88950 /* Graph.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,11 @@
 /* Begin PBXFileReference section */
 		87C81E7C1A807AA400D88950 /* GraphTraversal */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GraphTraversal; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C81E7F1A807AA400D88950 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		87C81E861A807BA300D88950 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
+		87C81E871A807BA300D88950 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		87C81E891A8127AB00D88950 /* Graph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cpp; sourceTree = "<group>"; };
+		87C81E8A1A8127AB00D88950 /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
+		87C81E8C1A81988700D88950 /* definitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = definitions.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,11 @@
 			isa = PBXGroup;
 			children = (
 				87C81E7F1A807AA400D88950 /* main.cpp */,
+				87C81E891A8127AB00D88950 /* Graph.cpp */,
+				87C81E8A1A8127AB00D88950 /* Graph.h */,
+				87C81E861A807BA300D88950 /* Node.cpp */,
+				87C81E871A807BA300D88950 /* Node.h */,
+				87C81E8C1A81988700D88950 /* definitions.h */,
 			);
 			path = GraphTraversal;
 			sourceTree = "<group>";
@@ -119,6 +131,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				87C81E801A807AA400D88950 /* main.cpp in Sources */,
+				87C81E8B1A8127AB00D88950 /* Graph.cpp in Sources */,
+				87C81E881A807BA300D88950 /* Node.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
