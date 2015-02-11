@@ -17,7 +17,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <sys/types.h>
-#include "Node.h"
 #include <math.h>
 
 #endif
@@ -27,4 +26,4 @@
 #define GRAPH_SIZE  64
 #define HINT_HEADER 0x0F0F0F0F
 #define HINT_FOOTER 0xF0F0F0F0
-#define _USE_MATH_DEFINESs
+#define _USE_MATH_DEFINES
