@@ -20,7 +20,7 @@ extern void mcsim_spinning_end();
 int32_t log_2(uint64_t);
 }
 
-pthread_mutex_t mut;
+pthread_mutex_t mut = PTHREAD_MUTEX_INITIALIZER;
 
 class thread_args
 {
@@ -29,7 +29,7 @@ public:
     uint32_t num_processors;
     Graph * myGraph;
     double * value;
-    pthread_barrier_t * barrier;
+    //pthread_barrier_t * barrier;
 
 };
 
@@ -38,19 +38,23 @@ void *gotoNext(void *arg)
     thread_args *p=(thread_args *)arg;
     int startIndex = p->proc_num;
     *(p->value) = 1.0;
-    pthread_barrier_wait(p->barrier);
-
+    //pthread_barrier_wait(p->barrier);
+    string log = "T(" + to_string(p->proc_num+1)+",:)=[";
     Node myNode = *p->myGraph->nodeArray[startIndex];
     for (int i = 0 ; i < NUM_OF_PROC * NUM_OF_LINKS ; i++) {
         myNode = *myNode.getHitPointer();
+        log = log+' '+to_string(myNode.nodeIndex);
     }
+    pthread_mutex_lock (&mut);
+    cout << endl << log << "];" << endl;
+    pthread_mutex_unlock (&mut);
     return (NULL);
 }
 
 int main(int argc, char* argv[]) {
     mcsim_skip_instrs_begin();
-    pthread_barrier_t * barrier = new pthread_barrier_t;
-    pthread_barrier_init(barrier, NULL, NUM_OF_PROC);
+    //pthread_barrier_t * barrier = new pthread_barrier_t;
+    //pthread_barrier_init(barrier, NULL, NUM_OF_PROC);
     pthread_t *threads = new pthread_t[NUM_OF_PROC];;
     thread_args * th_args = new thread_args[NUM_OF_PROC];
 
@@ -65,7 +69,7 @@ int main(int argc, char* argv[]) {
         th_args[i].num_processors = NUM_OF_PROC;
         th_args[i].value          = new double;
         *(th_args[i].value)       = 0.0;
-        th_args[i].barrier        = barrier;
+    //    th_args[i].barrier        = barrier;
     }
 
     mcsim_skip_instrs_end();

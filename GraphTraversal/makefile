@@ -4,8 +4,8 @@ VPATH = SRC INCLUDE
 #CFLAGS = -O0 -g -ggdb -w  -Wall
 CFLAGS = -O3 -w -g -DNDEBUG -fno-builtin
 #LDFLAGS = -lpthread 
-LDFLAGS = ../../Pthread/libmypthread.a
-WRAPPER_OBJ = ../../Apps/mcsim_wrapper.o
+LDFLAGS = Pthread/libmypthread.a
+WRAPPER_OBJ = mcsim_wrapper.o
 CC = g++ 
 
 $(TARGET): $(OBJS) $(WRAPPER_OBJ)

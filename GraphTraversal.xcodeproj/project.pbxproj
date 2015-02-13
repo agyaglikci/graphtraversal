@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		871377461A8C1B4C002EF43F /* Graph.cc in Sources */ = {isa = PBXBuildFile; fileRef = 871377411A8C1B4C002EF43F /* Graph.cc */; };
 		871377481A8C1B4C002EF43F /* main.cc in Sources */ = {isa = PBXBuildFile; fileRef = 871377431A8C1B4C002EF43F /* main.cc */; };
-		871377491A8C1B4C002EF43F /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 871377441A8C1B4C002EF43F /* makefile */; };
 		8713774A1A8C1B4C002EF43F /* Node.cc in Sources */ = {isa = PBXBuildFile; fileRef = 871377451A8C1B4C002EF43F /* Node.cc */; };
+		87DCFE271A8D1A4400D7EF96 /* mcsim_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 87DCFE261A8D1A4400D7EF96 /* mcsim_wrapper.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,12 +28,12 @@
 /* Begin PBXFileReference section */
 		871377411A8C1B4C002EF43F /* Graph.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cc; sourceTree = "<group>"; };
 		871377431A8C1B4C002EF43F /* main.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cc; sourceTree = "<group>"; };
-		871377441A8C1B4C002EF43F /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
 		871377451A8C1B4C002EF43F /* Node.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cc; sourceTree = "<group>"; };
 		87C81E7C1A807AA400D88950 /* GraphTraversal */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GraphTraversal; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C81E871A807BA300D88950 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 		87C81E8A1A8127AB00D88950 /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
 		87C81E8C1A81988700D88950 /* definitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = definitions.h; sourceTree = "<group>"; };
+		87DCFE261A8D1A4400D7EF96 /* mcsim_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mcsim_wrapper.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 			children = (
 				871377411A8C1B4C002EF43F /* Graph.cc */,
 				871377431A8C1B4C002EF43F /* main.cc */,
-				871377441A8C1B4C002EF43F /* makefile */,
+				87DCFE261A8D1A4400D7EF96 /* mcsim_wrapper.c */,
 				871377451A8C1B4C002EF43F /* Node.cc */,
 				87C81E8A1A8127AB00D88950 /* Graph.h */,
 				87C81E871A807BA300D88950 /* Node.h */,
@@ -134,8 +134,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8713774A1A8C1B4C002EF43F /* Node.cc in Sources */,
-				871377491A8C1B4C002EF43F /* makefile in Sources */,
 				871377461A8C1B4C002EF43F /* Graph.cc in Sources */,
+				87DCFE271A8D1A4400D7EF96 /* mcsim_wrapper.c in Sources */,
 				871377481A8C1B4C002EF43F /* main.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +220,11 @@
 		87C81E841A807AA400D88950 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GraphTraversal/Pthread",
+					"$(PROJECT_DIR)/GraphTraversal/Pthread/obj_opt",
+				);
 				New_Setting = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -228,6 +233,11 @@
 		87C81E851A807AA400D88950 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GraphTraversal/Pthread",
+					"$(PROJECT_DIR)/GraphTraversal/Pthread/obj_opt",
+				);
 				New_Setting = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
